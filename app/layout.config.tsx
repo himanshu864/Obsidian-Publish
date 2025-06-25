@@ -17,12 +17,23 @@ export const baseOptions: BaseLayoutProps = {
           xmlns="http://www.w3.org/2000/svg"
           aria-label="Logo"
         >
-          <circle cx={12} cy={12} r={12} fill="currentColor" />
+          <circle cx={12} cy={12} r={12} fill="rgb(116,62,228)" />
         </svg>
-        My App
+        DevObs
       </>
     ),
   },
   // see https://fumadocs.dev/docs/ui/navigation/links
-  links: [],
+  links: [
+    {
+      text: 'Docs',
+      url: '/docs',
+      active: 'nested-url',
+    },
+    {
+      text: 'About',
+      url: '/about',
+      active: 'url',
+    },
+  ],
 }
