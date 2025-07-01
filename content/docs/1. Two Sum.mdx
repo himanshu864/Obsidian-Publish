@@ -1,0 +1,136 @@
+---
+title: 1. Two Sum
+link: https://leetcode.com/problems/two-sum/
+concepts:
+  - '[[Array]]'
+  - '[[Hash]]'
+  - '[[Sorting]]'
+tags:
+  - '#easy'
+times_solved: 4
+last_solved: 2024-12-19
+attempt: first
+rating: 3
+revision: false
+---
+
+---
+
+# Problem Statement
+
+import Link from "next/link"
+
+Refer: <Link href="Math/Math">Math</Link>
+
+Given an array of integers `nums` and an integer `target`, return *indices of the two numbers such that they add up to `target`*.
+
+You may assume that each input would have ***exactly* one solution**, and you may not use the _same_element twice.
+
+You can return the answer in any order.
+
+---
+
+# Intuition
+
+**Approach 1**
+Can you brute force? Yes.
+
+**Approach 2**
+Can you sort the array? Not without indexing.
+
+**Approach 3**
+If we know one element `a`, we can easy figure out second element by `target - b`. Is there some way we can use this property? Yes, we can hash compliments.
+
+---
+
+# Approach 1 - Nested For loops - O(N$^2$) & O(1)
+
+1. Nested For loops to brute force find index of two numbers of sum equal to target.
+
+---
+
+# Code
+
+```cpp
+class Solution {
+public:
+    vector<int> twoSum(vector<int> &nums, int target) {
+        int n = nums.size();
+        for (int i = 0; i < n; i++)
+            for (int j = i + 1; j < n; j++)
+                if (nums[i] + nums[j] == target)
+                    return {i, j};
+        return {-1};
+    }
+};
+```
+
+---
+
+# Approach - 2 - Sort + Two Pointers - O(N logN) & O(N)
+
+1. We sort a `vector<pair<int, int>>` array with `{value, index}` and use two pointers to find two values with sum target, and return their indexes.
+
+---
+
+# Code
+
+```cpp
+class Solution
+{
+public:
+    vector<int> twoSum(vector<int> &nums, int target)
+    {
+        int n = nums.size();
+        vector<pair<int, int>> enums;
+        for (int i = 0; i < n; i++)
+            enums.push_back({nums[i], i});
+
+        sort(enums.begin(), enums.end());
+
+        int i = 0;
+        int j = n - 1;
+        while (i < j)
+        {
+            int x = enums[i].first;
+            int y = enums[j].first;
+            if (x + y > target)
+                j--;
+            else if (x + y < target)
+                i++;
+            else
+                return {enums[i].second, enums[j].second};
+        }
+        return {};
+    }
+};
+```
+
+---
+
+# Approach - 3 - Hash Table - O(N) & O(N)
+
+1. Since `nums[i] + nums[j] == target` we keep hashing compliments of every visited element `target - nums[i]`.
+2. Return indices if already encountered element with which we can sum target.
+
+---
+
+# Code
+
+```cpp
+class Solution
+{
+public:
+    vector<int> twoSum(vector<int> &nums, int target)
+    {
+        unordered_map<int, int> mp;
+        for (int j = 0; j < nums.size(); j++)
+        {
+            if (mp.count(nums[j]))
+                return {mp[nums[j]], j};
+            mp[target - nums[j]] = j;
+        }
+        return {};
+    }
+};
+```
