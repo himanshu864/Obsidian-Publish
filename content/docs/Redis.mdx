@@ -107,26 +107,11 @@ npm i ioredis
 
 2. Create `client.js`
 
-```js
-const Redis = require("ioredis");
 
-const client = new Redis();
-
-module.exports = client;
-```
 
 3. Create `string.js`
 
-```js
-const client = require("./client");
 
-async function func() {
-  const val = await client.get("abhishek");
-  console.log(val);
-}
-
-func();
-```
 
 Try and run `node string.js`. Similarly you can run all redis commands.
 
@@ -248,17 +233,7 @@ HGETALL bike:1
 ```
 
 NodeJS Server
-```js
-const res1 = await client.hSet(
-  'bike:1',
-  {
-    'model': 'Deimos',
-    'brand': 'Ergonom',
-    'type': 'Enduro bikes',
-    'price': 4972,
-  }
-)
-```
+
 
 ---
 # Redis Ordered Sets (Priority Queue)
