@@ -1,0 +1,47 @@
+---
+title: "User Authentication In Nodejs"
+---
+
+
+<span style={{ color: 'rgb(116,62,228)' }}>#nodejs</span> 
+
+```bash
+npm init -y
+npm i express bcrypt
+# touch .gitignore for node_modules
+# set npm start to nodemon server.js
+# use postman for handling API's
+```
+
+- **server.js :** Starting template for storing and displaying users on server
+
+
+
+- Need to create a POST request to create users and store them inside `users`
+
+
+
+- Use Postman : POST: [*localhost:3000/users](http://localhost:3000/users) &gt; Body &gt; raw &gt; JSON and enter user data to test*
+
+```json
+{
+    "name": "Himanshu",
+    "password": "password"
+}
+```
+
+- This works fine but password is visible in plain text. Need to hash using `bcrypt`
+- We need to add `salt` to our passwords before hashing them, so that multiple with password don’t end up with same encryptions. Salt will be different each time for each user.
+- bcrypt takes care of that 😃
+
+
+
+or simply pass 10 to bcrypt.hash.
+
+
+
+- To authenticate user, find user and `bcrypt.compare`
+
+
+
+# Voila! You’re done.
