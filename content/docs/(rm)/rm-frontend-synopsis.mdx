@@ -387,7 +387,10 @@ export async function fetchApi<T>(
   path: string,
   options: RequestInit = {}
 ): Promise<T> {
-  const res = await fetch(`${BASE_URL}${path}`, {
+  const res = await fetch(`
+```math
+{BASE_URL}
+```{path}`, {
     ...options,
     headers: { 'Content-Type': 'application/json', ...options.headers },
     credentials: 'include',
@@ -744,7 +747,10 @@ Because this table logic is encapsulated, adding a new table page is mostly abou
 
 To let users filter data, we implemented a **filter panel** (often a Shadcn “Sheet” or sliding dialog) containing a form. This form uses Zod schemas for validation and defines fields corresponding to query parameters. For instance, a “Status” dropdown might use a Zod `enum` to validate allowed values, and a “Date from/to” would use a Zod `date()` schema. Using Zod ensures that only valid query values are used on the server (guards against injection or bad input).
 
-When the user submits the filter form, we serialize the input into URL search parameters. In Next.js App Router, we typically call something like `router.replace(\`${pathname}?$&#123;params.toString()&#125;`)`to update the URL without a full reload. This means the page’s`searchParams`prop (or`useSearchParams` hook in client components) is updated, and our server component fetching data sees the new params. As the official tutorial notes, “you'll update the URL with the search params, data will be fetched on the server, and only the results that match your query will be returned”. Because the filters are encoded in the URL, the view is shareable/bookmarkable (a key benefit of this pattern). Users can copy the URL and others will see the same filtered results.
+When the user submits the filter form, we serialize the input into URL search parameters. In Next.js App Router, we typically call something like `router.replace(\`
+```math
+{pathname}?
+```&#123;params.toString()&#125;`)`to update the URL without a full reload. This means the page’s`searchParams`prop (or`useSearchParams` hook in client components) is updated, and our server component fetching data sees the new params. As the official tutorial notes, “you'll update the URL with the search params, data will be fetched on the server, and only the results that match your query will be returned”. Because the filters are encoded in the URL, the view is shareable/bookmarkable (a key benefit of this pattern). Users can copy the URL and others will see the same filtered results.
 
 We take care to synchronize form state with URL state. For example, on mounting we read current `searchParams` and set form default values (e.g. `<Input defaultValue={searchParams.get('query') || ''} />`) so the filter UI reflects any existing filters. The Zod schema helps here too: we can parse `searchParams` through Zod to get a typed filters object. A “Reset” or “Clear” button will remove all relevant query params (e.g. `params.delete('status')` etc.) and replace the URL with the base route. Closing the filter panel is done via the panel’s own close trigger (e.g. a “X” button or clicking outside).
 

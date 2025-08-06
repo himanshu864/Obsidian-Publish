@@ -46,7 +46,10 @@ range_arr = np.arange(5, 12)
 # [ 5 6 7 8 9 10 11]
 ```
 
-Notice: upper bound $12$ isn't included.
+Notice: upper bound 
+```math
+12
+``` isn't included.
 
 #### To populate array with random numbers in a range.
 
@@ -55,11 +58,17 @@ random_arr = np.random.randint(low=50, high=101, size=(2,3))
 # [[ 80 86 50]
 ```
 
-Again, upper bound $101$ isn't included.
+Again, upper bound 
+```math
+101
+``` isn't included.
 
 **Floating Point Integers**
 
-`np.random.random` generates random floats in range $[0, 1]$
+`np.random.random` generates random floats in range 
+```math
+[0, 1]
+```
 
 ```python
 noise = np.random.random(5) * 4 - 2

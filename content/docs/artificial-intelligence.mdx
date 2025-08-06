@@ -157,8 +157,20 @@ A typical problem in state space search is defined by:
 ```
 
 &gt; *Action(s)*: set of all possible actions for current state.
-&gt; *Result(s, a)*: state reached by performing action $a$ on state $s$.
-&gt; *cost(s, a)*: cost of performing action $a$ on state $s$.
+&gt; *Result(s, a)*: state reached by performing action 
+```math
+a
+``` on state 
+```math
+s
+```.
+&gt; *cost(s, a)*: cost of performing action 
+```math
+a
+``` on state 
+```math
+s
+```.
 
 **Benefits**
 This structured approach enhances **clarity**, **scalability**, **optimization**, and supports effective **decision making** during the search process.
@@ -199,8 +211,20 @@ Systematic methods and approaches used to explore and find relevant information 
 	- Not suitable for scenarios where the cost or weight of edges is not uniform.
 - Complete: if search space is finite.
 - Optimal: if unweighted or uniformly weighted.
-- Time complexity: $O(b^d)$; $b$ is branching factor and $d$ is depth of shallowed goal node.
-- Space complexity: $O(b^d)$; Stores all nodes at lowest level.
+- Time complexity: 
+```math
+O(b^d)
+```; 
+```math
+b
+``` is branching factor and 
+```math
+d
+``` is depth of shallowed goal node.
+- Space complexity: 
+```math
+O(b^d)
+```; Stores all nodes at lowest level.
 
 **Depth First Search**
 - Explore as deep as possible along one branch before backtracking (using a LIFO stack).
@@ -209,16 +233,34 @@ Systematic methods and approaches used to explore and find relevant information 
 - Disadvantage:
 	- Completeness not guaranteed: may get trapped in infinite loop or branches, if cycle. Use *Depth Limited Search* or *Iterative Deepening DFS* to remedy that. But again, not complete.
 	- Non-Optimal: As might solution at lower depth.
-- TC : $O(b^m)$; $b$ is branching factor and $m$ is maximum depth of search tree.
-- SC : $O(b^m)$; stores longest depth in memory.
+- TC : 
+```math
+O(b^m)
+```; 
+```math
+b
+``` is branching factor and 
+```math
+m
+``` is maximum depth of search tree.
+- SC : 
+```math
+O(b^m)
+```; stores longest depth in memory.
 
 **Uniform Cost Search**
 - Used for weighted tree/graph traversals.
 - Expands the node with the lowest path cost (using a priority queue).
 - Optimal: guarantees lowest-cost path.
 - TC and SC : high. (backtracking)
-- Time complexity: $O(b^d)$ but better than BFS.
-- Space complexity: $O(b^d)$
+- Time complexity: 
+```math
+O(b^d)
+``` but better than BFS.
+- Space complexity: 
+```math
+O(b^d)
+```
 
 **Bidirectional Search**
 - Simultaneous BFS from start and goal state and then meet in middle.
@@ -230,8 +272,14 @@ Systematic methods and approaches used to explore and find relevant information 
 	- Additional Overhead.
 - Completeness.
 - Optimality.
-- Time complexity: $O(b^{d/2})$
-- Space complexity: $O(b^{d/2})$
+- Time complexity: 
+```math
+O(b^{d/2})
+```
+- Space complexity: 
+```math
+O(b^{d/2})
+```
 
 **Problems in uninformed search**
 - Blind Exploration: even when we have information.
@@ -246,26 +294,46 @@ Systematic methods and approaches used to explore and find relevant information 
 
 **Informed (Heuristic) Search**
 Special search method to find more solutions more efficiently using knowledge, intuition and common-sense.
-- *Heuristic Function $h(n)$*: gives estimation on cost of getting from node $n$ to goal state.
+- *Heuristic Function 
+```math
+h(n)
+```*: gives estimation on cost of getting from node 
+```math
+n
+``` to goal state.
 
 **Best First Search**
 - Greedily chooses node with best heuristic value (most promising).
 - Takes advantage of both BFS and DFS.
-- Node with lowest $h(n)$ is evaluated first.
-- Algorithm : Using priority queue based on $h(n)$. start root. end goal.
+- Node with lowest 
+```math
+h(n)
+``` is evaluated first.
+- Algorithm : Using priority queue based on 
+```math
+h(n)
+```. start root. end goal.
 - Advance:
 	- find solution without much exploration
-	- less memory comparison to $A*$ etc.
+	- less memory comparison to 
+```math
+A*
+``` etc.
 - Disadvantage:
 	- Not complete, might get stuck in infinite loop.
 	- Not optimal, no guarantee, heavily depends on accuracy of heuristic value.
-- TC and SC : Worst case - $O(b^d)$ . average very less.
+- TC and SC : Worst case - 
+```math
+O(b^d)
+``` . average very less.
 
 **A\* Search**
 - Combines advantage of both uniform cost search and best first search.
-```
+
+```math
 f(n) = g(n) + h(n)
 ```
+
 &gt; **g(n)** is sum of actual cost from start node to current node.
 &gt; **h(n)** is heuristic value of node n.
 
@@ -276,8 +344,17 @@ f(n) = g(n) + h(n)
 
 *Condition of optimality*
 - Admissible heuristic : never overestimates the cost to reach goal. (optimistic). Eg: Straight line distance.
-- Consistency (monotonicity) : for every successor $n'$ of $n$ :
-	- $h(n) \le cost(n \to n') + h(n')$
+- Consistency (monotonicity) : for every successor 
+```math
+n'
+``` of 
+```math
+n
+``` :
+	- 
+```math
+h(n) \le cost(n \to n') + h(n')
+```
 - Problem with A\*
 	- So far, considered OR graphs i.e. single path to goal.
 
@@ -351,7 +428,19 @@ Operators:
 **Constraints Satisfaction Problem (CSP)**
 - Consists of set of variables, domain for each variable, and set of constraints that allow specific combinations of value.
 - Eg: Sudoku.
-- *Crypt Arithmetic Problem:* Find values of variables that satisfy a sum operation. Domain $\in [0,9]$. Condition: values must be unique. Observation: carry can only be $1$ or $0$. Extra digit at sum can only be $1$.
+- *Crypt Arithmetic Problem:* Find values of variables that satisfy a sum operation. Domain 
+```math
+\in [0,9]
+```. Condition: values must be unique. Observation: carry can only be 
+```math
+1
+``` or 
+```math
+0
+```. Extra digit at sum can only be 
+```math
+1
+```.
 - Solve using decision tree and backtracking.
 - Eg: `SEND + MORE = MONEY` =&gt; `9567 + 1085 = 10652`
 
@@ -369,15 +458,33 @@ Operators:
 - Search algorithm used in game playing to determine optimal sequence of moves for a player in zero-sum games (tic tac toe, chess, etc)
 - Backtracking in DFS, where one player tries to maximize the utility and another tries to minimize it.
 - Complete and Optimal
-- TC and SC : $O(b^d)$
+- TC and SC : 
+```math
+O(b^d)
+```
 - Limitations: can be too slow for complex games with many possible moves.
 
 **Alpha-Beta pruning**
 - Alpha - best value that the maximizer currently can guarantee at that level or above.
 - Beta - best value that the minimizer currently can guarantee at that level or above.
-- Initially $\alpha = -\infty$ and $\beta = \infty$.
-- Prune when $\alpha \ge \beta$.
-- Maximum node updates $\alpha$ from children, and similarly minimum updates $\beta$.
+- Initially 
+```math
+\alpha = -\infty
+``` and 
+```math
+\beta = \infty
+```.
+- Prune when 
+```math
+\alpha \ge \beta
+```.
+- Maximum node updates 
+```math
+\alpha
+``` from children, and similarly minimum updates 
+```math
+\beta
+```.
 - Efficient, complete, optimal, widely applicable.
 
 **Branch and Bound**
@@ -402,127 +509,242 @@ Ability to reason -&gt; Knowledge -&gt; Intelligence
 - **Premises** is a statement that supports conclusion (proposition). It is *always true*.
 - **Argument**: If a set of premises (P) yield another proposition Q (conclusion).
 - An argument is said *valid* if the conclusion Q can be derived from premises by applying rule of inference.
-```
+
+```math
 \{P_1 \ \wedge \ P_2 \ \wedge \ \dots \ \wedge \ P_n \} \ |- Q
 ```
-- Propositional variables - $p, q, r, s$.
+
+- Propositional variables - 
+```math
+p, q, r, s
+```.
 - **Compound propositions** - new mathematical statements, derived by combining one or more propositions.
 
-1. **Negation**: NOT: $\neg P$
-2. **Conjunction**: AND: $p \wedge q$
-3. **Disjunction**: OR: $p \vee q$
+1. **Negation**: NOT: 
+```math
+\neg P
+```
+2. **Conjunction**: AND: 
+```math
+p \wedge q
+```
+3. **Disjunction**: OR: 
+```math
+p \vee q
+```
 4. **Implication**:
 	- "if p, then q"
-	- Is false only for $T \to F$, otherwise true.
-	- $p \to q$; $p$ is called *hypothesis* (or premise) and q is called the *conclusion*.
-	- $q \to p$ converse
-	- $\neg p \to \neg q$ inverse
-	- $\neg q \to \neg p$ contra positive
-	- $p \to q \equiv \neg q \to \neg p$
-	- $p \to q \equiv \neg p \vee q$
+	- Is false only for 
+```math
+T \to F
+```, otherwise true.
+	- 
+```math
+p \to q
+```; 
+```math
+p
+``` is called *hypothesis* (or premise) and q is called the *conclusion*.
+	- 
+```math
+q \to p
+``` converse
+	- 
+```math
+\neg p \to \neg q
+``` inverse
+	- 
+```math
+\neg q \to \neg p
+``` contra positive
+	- 
+```math
+p \to q \equiv \neg q \to \neg p
+```
+	- 
+```math
+p \to q \equiv \neg p \vee q
+```
 5. **Bi-conditional**:
 	- "if p then q, and conversely"
-	- $p \leftrightarrow q \equiv (p \to q) \wedge (q \to p)$
-	- Is true when both $p$ and $q$ have same values, otherwise false.
+	- 
+```math
+p \leftrightarrow q \equiv (p \to q) \wedge (q \to p)
+```
+	- Is true when both 
+```math
+p
+``` and 
+```math
+q
+``` have same values, otherwise false.
 
 - **Tautology / valid**: Proposition function which is "Always True".
 - **Contradiction / Unsatisfiable**: "Always False".
-- **Contingency**: which is neither tautology nor contradiction. $p \vee q$
+- **Contingency**: which is neither tautology nor contradiction. 
+```math
+p \vee q
+```
 - **Satisfiable**: at least one true.
 
 **De Morgan's Law**
-```
+
+```math
 \neg (P \wedge Q) \equiv (\neg P \vee \neg Q)
 ```
-```
+
+
+```math
 \neg (P \vee Q) \equiv (\neg P \wedge \neg Q)
 ```
 
+
 **Properties**
-```
+
+```math
 (\alpha \wedge \beta) \equiv (\beta \wedge \alpha) \quad \text{commutativity of } \wedge
 ```
-```
+
+
+```math
 (\alpha \vee \beta) \equiv (\beta \vee \alpha) \quad \text{commutativity of } \vee
 ```
-```
+
+
+```math
 ((\alpha \wedge \beta) \wedge \gamma) \equiv (\alpha \wedge (\beta \wedge \gamma)) \quad \text{associativity of } \wedge
 ```
-```
+
+
+```math
 ((\alpha \vee \beta) \vee \gamma) \equiv (\alpha \vee (\beta \vee \gamma)) \quad \text{associativity of } \vee
 ```
-```
+
+
+```math
 \neg(\neg\alpha) \equiv \alpha \quad \text{double-negation elimination}
 ```
-```
+
+
+```math
 (\alpha \to \beta) \equiv (\neg\beta \to \neg\alpha) \quad \text{contraposition}
 ```
-```
+
+
+```math
 (\alpha \to \beta) \equiv (\neg\alpha \vee \beta) \quad \text{implication elimination}
 ```
-```
+
+
+```math
 (\alpha \leftrightarrow \beta) \equiv ((\alpha \to \beta) \wedge (\beta \to \alpha)) \quad \text{biconditional elimination}
 ```
-```
+
+
+```math
 \neg(\alpha \wedge \beta) \equiv (\neg\alpha \vee \neg\beta) \quad \text{De Morgan}
 ```
-```
+
+
+```math
 \neg(\alpha \vee \beta) \equiv (\neg\alpha \wedge \neg\beta) \quad \text{De Morgan}
 ```
-```
+
+
+```math
 (\alpha \wedge (\beta \vee \gamma)) \equiv ((\alpha \wedge \beta) \vee (\alpha \wedge \gamma)) \quad \text{distributivity of } \wedge \text{ over } \vee
 ```
-```
+
+
+```math
 (\alpha \vee (\beta \wedge \gamma)) \equiv ((\alpha \vee \beta) \wedge (\alpha \vee \gamma)) \quad \text{distributivity of } \vee \text{ over } \wedge
 ```
+
 
 ## Well-found Formulas
 
 A **sentence** (also called a _well-formed formula_) is defined inductively as follows:
 
-1. Any propositional **symbol** $S$ is a sentence.
-2. If S is a sentence, then $\neg S$ is also a sentence.
-3. If S is a sentence, then $(S)$ is also a sentence.
+1. Any propositional **symbol** 
+```math
+S
+``` is a sentence.
+2. If S is a sentence, then 
+```math
+\neg S
+``` is also a sentence.
+3. If S is a sentence, then 
+```math
+(S)
+``` is also a sentence.
 4. If S and T are sentences, then each of the following is also a sentence:
-    - $S \wedge T$
-    - $S \vee T$
-    - $S \to T$
-    - $S \leftrightarrow T$
+    - 
+```math
+S \wedge T
+```
+    - 
+```math
+S \vee T
+```
+    - 
+```math
+S \to T
+```
+    - 
+```math
+S \leftrightarrow T
+```
 
 ## Rules of Inference
 
 - **Modus ponens**
-```
+
+```math
 P,\;P \to Q\;\therefore\;Q
 ```
+
 - **Modus tollens**
-```
+
+```math
 \neg Q,\;P \to Q\;\therefore\;\neg P
 ```
+
 - **Hypothetical syllogism**
-```
+
+```math
 P \to Q,\;Q \to R\;\therefore\;P \to R
 ```
+
 - **Disjunctive syllogism**
-```
+
+```math
 P \vee Q,\;\neg P\;\therefore\;Q
 ```
+
 - **Addition**
-```
+
+```math
 P\;\therefore\;P \vee Q
 ```
+
 - **Simplification**
-```
+
+```math
 P \wedge Q\;\therefore\;P
 ```
+
 - **Conjunction**
-```
+
+```math
 P,\;Q\;\therefore\;P \wedge Q
 ```
+
 - **Resolution**
-```
+
+```math
 P \vee Q,\;\neg P \vee R\;\therefore\;Q \vee R
 ```
+
 
 ## Proposition Logic
 
@@ -534,20 +756,30 @@ Too puny a language to represent complex environment in a concise way. That's wh
 **Universal Quantifiers** of a proposition function is the proposition that asserts
 
 - P(x) is true for all values of x in the universe of discourse i.e. all possible values of x.
-- $\forall_x \; P(x)$ i.e. for all values of x, P(x) is true.
+- 
+```math
+\forall_x \; P(x)
+``` i.e. for all values of x, P(x) is true.
 
 **Existential Quantifiers** of a proposition function is the proposition that asserts
 
 - P(x) is true for at least one value of x in the universe of discourse.
-- $\exists_x \; P(x)$ i.e. for at least one value of x, P(x) is true.
+- 
+```math
+\exists_x \; P(x)
+``` i.e. for at least one value of x, P(x) is true.
 
 **Negation**
-```
+
+```math
 \neg [\forall_x \; P(x)] \equiv \exists_x \; \neg P(x)
 ```
-```
+
+
+```math
 \neg [\exists_x \; P(x)] \equiv \forall_x \; \neg P(x)
 ```
+
 
 &gt; [!Tip]
 &gt; Read from left to right, when writing in first order predicate logic.
@@ -562,28 +794,75 @@ Four different methods to deal with quantified sentences in first order logic.
 
 1. **Universal instantiation / Universal specialization  / Universal elimination**
 	- If "everyone likes ice cream", then "john likes ice cream".
-	- The UI rule state that we can infer any sentence $P(c)$ by substituting a ground term $c$ (a constant within a domain x) from $\forall_x \; P(x)$ for any object in the universe of discourse.
-	```
+	- The UI rule state that we can infer any sentence 
+```math
+P(c)
+``` by substituting a ground term 
+```math
+c
+``` (a constant within a domain x) from 
+```math
+\forall_x \; P(x)
+``` for any object in the universe of discourse.
+	
+```math
 \frac{\forall_x \; P(x)}{P(c)}
 ```
+
 2. **Existential instantiation**
-	- "there exists a person who likes pizza" means "$c$ likes pizza".
-	- This rule states that one can infer $P(c)$ from formula $\exists_x \; P(x)$ for a constant symbol $c$.
-	```
+	- "there exists a person who likes pizza" means "
+```math
+c
+``` likes pizza".
+	- This rule states that one can infer 
+```math
+P(c)
+``` from formula 
+```math
+\exists_x \; P(x)
+``` for a constant symbol 
+```math
+c
+```.
+	
+```math
 \frac{\exists_x \; P(x)}{P(c)}
 ```
+
 3. **Existential generalization / Existential introduction**
 	- If "Priyanka got good marks in English", then "someone got good marks in English".
-	- If there is some element $c$ in the universe of discourse which has a property $P$, then we can infer that there exists something in the universe which has a property $P$.
-	```
+	- If there is some element 
+```math
+c
+``` in the universe of discourse which has a property 
+```math
+P
+```, then we can infer that there exists something in the universe which has a property 
+```math
+P
+```.
+	
+```math
 \frac{P(c)}{\exists_x \; P(x)}
 ```
+
 4. **Universal generalization / Universal introduction**
 	- If "A byte contains 8 bits", so for all values of x "All bytes contain 8 bits".
-	- If premise $P(c)$ is true for any arbitrary element $c$ in the universe of discourse, then we can have a conclusion as $\forall_x \; P(x)$
-	```
+	- If premise 
+```math
+P(c)
+``` is true for any arbitrary element 
+```math
+c
+``` in the universe of discourse, then we can have a conclusion as 
+```math
+\forall_x \; P(x)
+```
+	
+```math
 \frac{P(c)}{\forall_x \; P(x)}
 ```
+
 ## Forward and Backward Chaining
 
 | Forward Chaining                                                       | Backward Chaining                                                              |
@@ -594,7 +873,13 @@ Four different methods to deal with quantified sentences in first order logic.
 | Adds Knowledge                                                         | Deduces necessities (conditions for goal)                                      |
 | Stops when no further deductions can be made or goal is reached.       | Stops when it reaches beginning facts or rules, or goal is proven / disproven. |
 | Bottom-up                                                              | Top-down                                                                       |
-| **Modus Ponens** $(P \to Q) \wedge (P) \equiv Q$                       | **Modus Tollens** $(P \to Q) \wedge (\neg Q) \equiv \neg P$                    |
+| **Modus Ponens** 
+```math
+(P \to Q) \wedge (P) \equiv Q
+```                       | **Modus Tollens** 
+```math
+(P \to Q) \wedge (\neg Q) \equiv \neg P
+```                    |
 | Common in real-time systems and production rule system.                | Used in diagnostic systems.                                                    |
 
 ## Resolution
@@ -627,7 +912,10 @@ Study of how knowledge can be represented in computer system to mimic human thou
 - Facts: true information.
 - Representation: formal expression of facts.
 
-Ex: "Charlie is a dog" =&gt; logical representation $Dog(Charlie)$
+Ex: "Charlie is a dog" =&gt; logical representation 
+```math
+Dog(Charlie)
+```
 
 **Characteristics**
 
@@ -640,7 +928,10 @@ Ex: "Charlie is a dog" =&gt; logical representation $Dog(Charlie)$
 - **Logic-based representation**
 	- **Propositional Logic**: uses simple true or false statements
 	- **Predicate Logic**: extends propositional logic with predicates that can express relations among objects and quantifiers to handle multiple entities.
-	- Eg: "all humans are mortal" -&gt; $\forall_x \; (Humans(x) \to Mortal(x))$
+	- Eg: "all humans are mortal" -&gt; 
+```math
+\forall_x \; (Humans(x) \to Mortal(x))
+```
 - ## **Semantic Network**
 	- Graph structures used to represent semantic relations between concepts.
 	- *Nodes* represent objects.
@@ -713,7 +1004,10 @@ Collection of attributes or **slots** and associated values that describe some *
 3. Default - slot default value
 4. Domain - slot elements domain
 5. Range - specifies class of which elements
-6. Range constraints - logical expression $6 \lt i \lt 10$
+6. Range constraints - logical expression 
+```math
+6 \lt i \lt 10
+```
 7. To-compute - value of slot to be computed
 8. Single-values - function returns single value
 9. Inverse - slot inverse used in reasoning
@@ -735,16 +1029,40 @@ Describes the probability of an event, based on prior knowledge of conditions th
 In Probability theory it relates the conditional probability and marginal probability of two random events.
 
 &gt; **Conditional Probability**
-&gt; $P(H/E) = \frac&#123;\text&#123;number of times H and E occured&#125;&#125;&#123;\text&#123;number of times E occured&#125;&#125; = \frac&#123;P(H \; \cap \; E)&#125;&#123;P(E)&#125;$
+&gt; 
+```math
+P(H/E) = \frac&#123;\text&#123;number of times H and E occured&#125;&#125;&#123;\text&#123;number of times E occured&#125;&#125; = \frac&#123;P(H \; \cap \; E)&#125;&#123;P(E)&#125;
+```
 
-Calculate $P(B / A)$ with the knowledge of $P(A / B)$
+Calculate 
+```math
+P(B / A)
+``` with the knowledge of 
+```math
+P(A / B)
+```
 
 &gt; **Baye's Theorem**
-&gt; $P(A/B) = \frac&#123;P(B/A) \cdot P(A)&#125;&#123;P(B)&#125;$
-&gt; $P(A/B)$ is *Posterior* (prob. of A when B is true)
-&gt; $P(B/A)$ is *Likelihood* (prob. of evidence)
-&gt; $P(A)$ is *Prior probability* (prob. of hypothesis)
-&gt; $P(B)$ is *Marginal probability* (prob. of evidence)
+&gt; 
+```math
+P(A/B) = \frac&#123;P(B/A) \cdot P(A)&#125;&#123;P(B)&#125;
+```
+&gt; 
+```math
+P(A/B)
+``` is *Posterior* (prob. of A when B is true)
+&gt; 
+```math
+P(B/A)
+``` is *Likelihood* (prob. of evidence)
+&gt; 
+```math
+P(A)
+``` is *Prior probability* (prob. of hypothesis)
+&gt; 
+```math
+P(B)
+``` is *Marginal probability* (prob. of evidence)
 
 **Applications**
 - Robot / automatic machines
@@ -797,28 +1115,81 @@ Mathematical tool to represent uncertainty and vagueness.
 
 ## Membership function in Fuzzy Systems
 
-**Degree of Truth:** Generalizes the classical “indicator” function (0 or 1) to a continuous scale $[0,1]$.
-**Vagueness & Uncertainty:** Captures how strongly a given crisp input $x$ belongs to a fuzzy set $A$.
+**Degree of Truth:** Generalizes the classical “indicator” function (0 or 1) to a continuous scale 
+```math
+[0,1]
+```.
+**Vagueness & Uncertainty:** Captures how strongly a given crisp input 
+```math
+x
+``` belongs to a fuzzy set 
+```math
+A
+```.
 **Human‑style Reasoning:** Enables inference with partial truths (“somewhat hot,” “very tall,” etc.).
 
 #### Mathematical Notation
 
-A fuzzy set $A$ over universe $X$ is written as:
-```
+A fuzzy set 
+```math
+A
+``` over universe 
+```math
+X
+``` is written as:
+
+```math
 A = \{\, (x,\;\mu_A(x)) \mid x\in X \}
 ```
-&gt; $\mu_A: X \to [0,1]$ is the **membership function**
-&gt; $X$ is **membership space** (universe of discourse)
+
+&gt; 
+```math
+\mu_A: X \to [0,1]
+``` is the **membership function**
+&gt; 
+```math
+X
+``` is **membership space** (universe of discourse)
 #### Key Features
 
-For any fuzzy set $A$ with membership function $\mu_A(x)$:
+For any fuzzy set 
+```math
+A
+``` with membership function 
+```math
+\mu_A(x)
+```:
 
 | Feature                      | Definition                       | Notation                 |
 | :--------------------------- | :------------------------------- | :----------------------- |
-| **Support**                  | All $x$ with non‑zero membership | $\{x\mid \mu_A(x)>0\}$   |
-| **Core**                     | All $x$ fully in the set         | $\{x\mid \mu_A(x)=1\}$   |
-| **Crossover** (α‑cut at 0.5) | All $x$ where $\mu_A(x)=0.5$     | $\{x\mid \mu_A(x)=0.5\}$ |
-| **Boundary**                 | Region between support and core  | $\{x\mid 0<\mu_A(x)<1\}$ |
+| **Support**                  | All 
+```math
+x
+``` with non‑zero membership | 
+```math
+\{x\mid \mu_A(x)>0\}
+```   |
+| **Core**                     | All 
+```math
+x
+``` fully in the set         | 
+```math
+\{x\mid \mu_A(x)=1\}
+```   |
+| **Crossover** (α‑cut at 0.5) | All 
+```math
+x
+``` where 
+```math
+\mu_A(x)=0.5
+```     | 
+```math
+\{x\mid \mu_A(x)=0.5\}
+``` |
+| **Boundary**                 | Region between support and core  | 
+```math
+\{x\mid 0<\mu_A(x)<1\}
+``` |
 
 ![Pasted image 20250517002441.png](https://raw.githubusercontent.com/himanshu864/DevObs/refs/heads/main/Assets/Pasted%20image%2020250517002441.png)
 

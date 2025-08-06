@@ -24,7 +24,10 @@ io.on("connection", (socket) => {
 
   // Listen and Emit custom events
   socket.on("foo", (msg) => {
-    io.emit("bar", `${msg} from ${socket.id}`);
+    io.emit("bar", `
+```math
+{msg} from
+```{socket.id}`);
   });
 
   socket.on("disconnect", () => {

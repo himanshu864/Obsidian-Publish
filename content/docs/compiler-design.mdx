@@ -61,7 +61,10 @@ Files are in HDD. Compilers/interpreter in Main memory (RAM). And CPU handles ex
 ![Pasted image 20250228115945.png](https://raw.githubusercontent.com/himanshu864/DevObs/refs/heads/main/Assets/Pasted%20image%2020250228115945.png)
 
 **1. Lexical Analysis**  
-- Converts a stream of characters (pure HLL i.e. $x = y + z * 60$) into a stream of *tokens* using DFAs.
+- Converts a stream of characters (pure HLL i.e. 
+```math
+x = y + z * 60
+```) into a stream of *tokens* using DFAs.
 - All identifiers are stored in a symbol table after tokenization.
 
 **2. Syntax Analysis**
@@ -224,13 +227,28 @@ None accept ambiguous grammar.
 
 #### Top-Down
 - Derive word from start.
-- Replace $\alpha$ with $\beta$.
-- Hard to choose between $\beta$.
+- Replace 
+```math
+\alpha
+``` with 
+```math
+\beta
+```.
+- Hard to choose between 
+```math
+\beta
+```.
 - LMD
 
 #### Bottom-Up
 - Derive start from word.
-- Replace $\beta$ with $\alpha$.
+- Replace 
+```math
+\beta
+``` with 
+```math
+\alpha
+```.
 - RMD in reverse.
 
 #### Recursive Descent Parser
@@ -326,7 +344,10 @@ Files are in HDD. Compilers/interpreter in Main memory (RAM). And CPU handles ex
 ![Pasted image 20250228115945.png](https://raw.githubusercontent.com/himanshu864/DevObs/refs/heads/main/Assets/Pasted%20image%2020250228115945.png)
 
 **1. Lexical Analysis**  
-- Converts a stream of characters (pure HLL i.e. $x = y + z * 60$) into a stream of *tokens* using DFAs.
+- Converts a stream of characters (pure HLL i.e. 
+```math
+x = y + z * 60
+```) into a stream of *tokens* using DFAs.
 - All identifiers are stored in a symbol table after tokenization.
 
 **2. Syntax Analysis**
@@ -489,13 +510,28 @@ None accept ambiguous grammar.
 
 #### Top-Down
 - Derive word from start.
-- Replace $\alpha$ with $\beta$.
-- Hard to choose between $\beta$.
+- Replace 
+```math
+\alpha
+``` with 
+```math
+\beta
+```.
+- Hard to choose between 
+```math
+\beta
+```.
 - LMD
 
 #### Bottom-Up
 - Derive start from word.
-- Replace $\beta$ with $\alpha$.
+- Replace 
+```math
+\beta
+``` with 
+```math
+\alpha
+```.
 - RMD in reverse.
 
 #### Recursive Descent Parser
@@ -557,8 +593,14 @@ A top-down parser that scans input Left-to-right, produces a Leftmost derivation
 - **For each production A → α:**
 	- For every terminal a in **FIRST(α)**, add A → α to table entry M[A, a].
 	- If ε ∈ **FIRST(α)**, then for every terminal b in **FOLLOW(A)**, add A → α to M[A, b].
-	- Keep putting $\epsilon$ on right hand side as long as NULL and add firsts.
-	- Include M[A, $] if ε ∈ **FIRST(α)** and $ ∈ **FOLLOW(A)**.
+	- Keep putting 
+```math
+\epsilon
+``` on right hand side as long as NULL and add firsts.
+	- Include M[A, 
+```math
+] if ε ∈ **FIRST(α)** and
+``` ∈ **FOLLOW(A)**.
 - The table must have at most one production per cell; conflicts indicate the grammar is not LL(1).
 
 ![Screenshot 2025-03-02 at 4.02.02 PM.png](https://raw.githubusercontent.com/himanshu864/DevObs/refs/heads/main/Assets/Screenshot%202025-03-02%20at%204.02.02%20PM.png)
@@ -621,7 +663,10 @@ Files are in HDD. Compilers/interpreter in Main memory (RAM). And CPU handles ex
 ![Pasted image 20250228115945.png](https://raw.githubusercontent.com/himanshu864/DevObs/refs/heads/main/Assets/Pasted%20image%2020250228115945.png)
 
 **1. Lexical Analysis**  
-- Converts a stream of characters (pure HLL i.e. $x = y + z * 60$) into a stream of *tokens* using DFAs.
+- Converts a stream of characters (pure HLL i.e. 
+```math
+x = y + z * 60
+```) into a stream of *tokens* using DFAs.
 - All identifiers are stored in a symbol table after tokenization.
 
 **2. Syntax Analysis**
@@ -784,13 +829,28 @@ None accept ambiguous grammar.
 
 #### Top-Down
 - Derive word from start.
-- Replace $\alpha$ with $\beta$.
-- Hard to choose between $\beta$.
+- Replace 
+```math
+\alpha
+``` with 
+```math
+\beta
+```.
+- Hard to choose between 
+```math
+\beta
+```.
 - LMD
 
 #### Bottom-Up
 - Derive start from word.
-- Replace $\beta$ with $\alpha$.
+- Replace 
+```math
+\beta
+``` with 
+```math
+\alpha
+```.
 - RMD in reverse.
 
 #### Recursive Descent Parser
@@ -886,7 +946,10 @@ Files are in HDD. Compilers/interpreter in Main memory (RAM). And CPU handles ex
 ![Pasted image 20250228115945.png](https://raw.githubusercontent.com/himanshu864/DevObs/refs/heads/main/Assets/Pasted%20image%2020250228115945.png)
 
 **1. Lexical Analysis**  
-- Converts a stream of characters (pure HLL i.e. $x = y + z * 60$) into a stream of *tokens* using DFAs.
+- Converts a stream of characters (pure HLL i.e. 
+```math
+x = y + z * 60
+```) into a stream of *tokens* using DFAs.
 - All identifiers are stored in a symbol table after tokenization.
 
 **2. Syntax Analysis**
@@ -1049,13 +1112,28 @@ None accept ambiguous grammar.
 
 #### Top-Down
 - Derive word from start.
-- Replace $\alpha$ with $\beta$.
-- Hard to choose between $\beta$.
+- Replace 
+```math
+\alpha
+``` with 
+```math
+\beta
+```.
+- Hard to choose between 
+```math
+\beta
+```.
 - LMD
 
 #### Bottom-Up
 - Derive start from word.
-- Replace $\beta$ with $\alpha$.
+- Replace 
+```math
+\beta
+``` with 
+```math
+\alpha
+```.
 - RMD in reverse.
 
 #### Recursive Descent Parser
@@ -1117,8 +1195,14 @@ A top-down parser that scans input Left-to-right, produces a Leftmost derivation
 - **For each production A → α:**
 	- For every terminal a in **FIRST(α)**, add A → α to table entry M[A, a].
 	- If ε ∈ **FIRST(α)**, then for every terminal b in **FOLLOW(A)**, add A → α to M[A, b].
-	- Keep putting $\epsilon$ on right hand side as long as NULL and add firsts.
-	- Include M[A, $] if ε ∈ **FIRST(α)** and $ ∈ **FOLLOW(A)**.
+	- Keep putting 
+```math
+\epsilon
+``` on right hand side as long as NULL and add firsts.
+	- Include M[A, 
+```math
+] if ε ∈ **FIRST(α)** and
+``` ∈ **FOLLOW(A)**.
 - The table must have at most one production per cell; conflicts indicate the grammar is not LL(1).
 
 ![Screenshot 2025-03-02 at 4.02.02 PM.png](https://raw.githubusercontent.com/himanshu864/DevObs/refs/heads/main/Assets/Screenshot%202025-03-02%20at%204.02.02%20PM.png)
@@ -1178,16 +1262,70 @@ A type of bottom-up parsing that uses **LR(0) items**—productions with a dot i
 #### LR(0) Parsing Table Construction
 
 - **Augment Grammar:**
-	- Add $S' \to S$.
+	- Add 
+```math
+S' \to S
+```.
 - **Build States:**
-	- Start with $I_0 = closure({S' \to \cdot S})$.
-	- For each state $I$, compute $goto(I, X)$ for every symbol $X$ to generate new states.
+	- Start with 
+```math
+I_0 = closure({S' \to \cdot S})
+```.
+	- For each state 
+```math
+I
+```, compute 
+```math
+goto(I, X)
+``` for every symbol 
+```math
+X
+``` to generate new states.
 - **ACTION Table:** (contains shift and reduce operations over terminal)
-	- If an item in $I$ is $A \to \alpha \cdot a \beta$, set ACTION[I, a] to "*shift* to $goto(I, a)$".
-	- If an item in $I$ is $A \to \alpha \cdot$, for every terminal $t$, set ACTION[I, t] to "*reduce* by $A \to \alpha$".
-	- For $I$ containing $S' \to S \cdot$, set ACTION[I, \$] to "accept".
+	- If an item in 
+```math
+I
+``` is 
+```math
+A \to \alpha \cdot a \beta
+```, set ACTION[I, a] to "*shift* to 
+```math
+goto(I, a)
+```".
+	- If an item in 
+```math
+I
+``` is 
+```math
+A \to \alpha \cdot
+```, for every terminal 
+```math
+t
+```, set ACTION[I, t] to "*reduce* by 
+```math
+A \to \alpha
+```".
+	- For 
+```math
+I
+``` containing 
+```math
+S' \to S \cdot
+```, set ACTION[I, \$] to "accept".
 - **GOTO Table:** (contains only shift operations over non-terminals)
-	- For each nonterminal $B$, if $I$ has an item $A \to \alpha \cdot B \beta$, set GOTO[I, B] to $goto(I, B)$.
+	- For each nonterminal 
+```math
+B
+```, if 
+```math
+I
+``` has an item 
+```math
+A \to \alpha \cdot B \beta
+```, set GOTO[I, B] to 
+```math
+goto(I, B)
+```.
 - **Conflict Check:**
 	- Ensure each cell in the tables has only one action; multiple actions mean the grammar is not LR(0).
 
@@ -1205,7 +1343,10 @@ A type of bottom-up parsing that uses **LR(0) items**—productions with a dot i
     3. **Reduce (pop):**
         - If ACTION[state, token] = "reduce by A → α":
             - Pop 2×|α| items (double length of RHS).
-            - Let t = new top (number); push nonterminal A, then push *$GOTO[t, A]$.*
+            - Let t = new top (number); push nonterminal A, then push *
+```math
+GOTO[t, A]
+```.*
     4. **Accept/Error:**
         - If ACTION[state, $] = "accept": parsing succeeds.
         - Otherwise, if no valid action, signal error.
@@ -1224,12 +1365,27 @@ SLR(1) (Simple LR with 1 lookahead) extends LR(0) by using FOLLOW sets to decide
 
 **SLR(1) Parsing** is built the same way as **LR(0)** parsing, with one key difference.
 
-For an item $A \to \alpha \cdot$, instead of *reducing* on all terminals, add a reduce action only for terminals in $\text{FOLLOW}(A)$.
+For an item 
+```math
+A \to \alpha \cdot
+```, instead of *reducing* on all terminals, add a reduce action only for terminals in 
+```math
+\text{FOLLOW}(A)
+```.
 
-&gt; LR(0) $\in$ SLR(1) but not vice-versa.
+&gt; LR(0) 
+```math
+\in
+``` SLR(1) but not vice-versa.
 
 &gt; [!Tip]
-**Inadequate State**: Any state where there exists either $S-R$ (shift-reduce) or $R-R$ conflict.
+**Inadequate State**: Any state where there exists either 
+```math
+S-R
+``` (shift-reduce) or 
+```math
+R-R
+``` conflict.
 
 ---
 ## CLR(1)
@@ -1237,9 +1393,36 @@ For an item $A \to \alpha \cdot$, instead of *reducing* on all terminals, add a 
 Most powerful LR Parser with *look ahead symbols*. Same as SLR(1) just calculate FOLLOW of each production at *runtime*.
 
 - **Build Canonical LR(1) Items:**
-    - Items are of the form $[A \to \alpha \cdot \beta, a]$, where $a$ is a lookahead.
-    - **Closure:** For $[A \to \alpha \cdot B \beta, a]$, add $[B \to \cdot \gamma, b]$ for every production $B \to \gamma$ and each $b \in FIRST(\beta a)$. (find follow of first B, right next to dot which called it, and no other occurrence)
-    - **Goto:** For each item $[A \to \alpha \cdot X \beta, a]$, shift the dot over $X$ to form $[A \to \alpha X \cdot \beta, a]$, then take closure. (carry previous follow)
+    - Items are of the form 
+```math
+[A \to \alpha \cdot \beta, a]
+```, where 
+```math
+a
+``` is a lookahead.
+    - **Closure:** For 
+```math
+[A \to \alpha \cdot B \beta, a]
+```, add 
+```math
+[B \to \cdot \gamma, b]
+``` for every production 
+```math
+B \to \gamma
+``` and each 
+```math
+b \in FIRST(\beta a)
+```. (find follow of first B, right next to dot which called it, and no other occurrence)
+    - **Goto:** For each item 
+```math
+[A \to \alpha \cdot X \beta, a]
+```, shift the dot over 
+```math
+X
+``` to form 
+```math
+[A \to \alpha X \cdot \beta, a]
+```, then take closure. (carry previous follow)
 	
 Fill the table just like we did in SLR(1) just use calculated follow for reduction.
 
@@ -1256,9 +1439,18 @@ Minimized from of CLR(1). Less powerful. We merge same states with different loo
 An operator precedence grammar is a CFG where productions do not have adjacent nonterminals, allowing clear specification of precedence and associativity among terminal operators.
 
 - **Precedence Relations:**
-    - **Equal Precedence ($\doteq$):** Operators at the same level.
-    - **Lower Precedence ($\lessdot$):** The left operator yields to the right operator.
-    - **Higher Precedence ($\gtrdot$):** The left operator takes precedence over the right.
+    - **Equal Precedence (
+```math
+\doteq
+```):** Operators at the same level.
+    - **Lower Precedence (
+```math
+\lessdot
+```):** The left operator yields to the right operator.
+    - **Higher Precedence (
+```math
+\gtrdot
+```):** The left operator takes precedence over the right.
 - **Parsing Mechanism:**
     - A parser uses a precedence table based on these relations to decide when to shift (read new input) or reduce (apply a production), especially for arithmetic expressions.
 - **Advantages & Limitations:**
@@ -1335,11 +1527,17 @@ e ? x y  --> e x y ?
 
 ## Three Address Code
 
-TAC is a type of intermediate code where each instruction can have at most 3 operands and one operator. i.e. $x = y \; \text{operator} \; z$.
+TAC is a type of intermediate code where each instruction can have at most 3 operands and one operator. i.e. 
+```math
+x = y \; \text{operator} \; z
+```.
 
 It simplifies complex operations into sequence of simple statements, supporting various operators of arithmetic, logic or boolean operations.
 
-Eg: $(a + b) * (a + b + c)$ into
+Eg: 
+```math
+(a + b) * (a + b + c)
+``` into
 ```c
 t1 = a + b
 t2 = a + b
@@ -1372,7 +1570,10 @@ t4 = t1 * t3
 
 #### Triplets
 
-- Result is stores in variable of sequence number $t_i$
+- Result is stores in variable of sequence number 
+```math
+t_i
+```
 - Advantage: Space isn't wasted
 - Disadvantage: Statements can't be moved
 

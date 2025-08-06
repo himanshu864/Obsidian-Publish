@@ -346,7 +346,10 @@ socket.on("user connected", (socketId, name) => {
 // when someone messages
 socket.on("chat message", (socketId, name, msg) => {
   if (socketId == socket.id) appendMessage(`You: ${msg}`);
-  else appendMessage(`${name}: ${msg}`);
+  else appendMessage(`
+```math
+{name}:
+```{msg}`);
 });
 
 // when someone disconnects

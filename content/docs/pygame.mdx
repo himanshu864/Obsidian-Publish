@@ -63,12 +63,24 @@ while True:
 	screen.blit(text_surface, (20, 50))
 ```
 
-Rendering `text_surface` at $[20, 50]$ on display surface.
+Rendering `text_surface` at 
+```math
+[20, 50]
+``` on display surface.
 
 ![Screenshot 2025-01-28 at 11.17.26 PM.png](https://raw.githubusercontent.com/himanshu864/DevObs/refs/heads/main/Assets/Screenshot%202025-01-28%20at%2011.17.26%20PM.png)
 Notice, `text_surface` renders 20px to left and 50px down. Hence,
 
-&gt; In `pygame` coordinates starts from $[0, 0]$ at top left and $x$ goes from left to right, while $y$ goes from up to down.
+&gt; In `pygame` coordinates starts from 
+```math
+[0, 0]
+``` at top left and 
+```math
+x
+``` goes from left to right, while 
+```math
+y
+``` goes from up to down.
 
 #### Render Text
 
@@ -96,7 +108,10 @@ if snail_x < -snail_width:
 	snail_x = WINDOW_WIDTH
 ```
 
-Here we are changing snail frame at $5$ fps using `snail_index`. And are changing snail's x-coordinate at `SNAIL_SPEED` to make it infinitely loop from end to start.
+Here we are changing snail frame at 
+```math
+5
+``` fps using `snail_index`. And are changing snail's x-coordinate at `SNAIL_SPEED` to make it infinitely loop from end to start.
 
 &gt; [!note]
 &gt; Be sure update background when animating, otherwise we get strange lagging results.
