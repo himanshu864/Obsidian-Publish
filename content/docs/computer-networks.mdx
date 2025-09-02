@@ -95,8 +95,7 @@ Refers to the way in which a network is laid out physically. Topology of a netwo
 Every device has a dedicated point-to-point link to every other device. We need, 
 ```math
 \frac{n(n - 1)}{2}
-```
- duplex-mode links, where 
+``` duplex-mode links, where 
 ```math
 n
 ``` is the number of nodes.
@@ -428,7 +427,6 @@ Time taken by bit for travel from point A to point B in transmission media.
 ```math
 T_p = \frac{\text{Distance}}{\text{Propagation Speed}}
 ```
-
 ![Screenshot 2025-02-26 at 4.55.17 PM.png](https://raw.githubusercontent.com/himanshu864/DevObs/refs/heads/main/Assets/Screenshot%202025-02-26%20at%204.55.17%20PM.png)
 
 **Transmission Delay (
@@ -452,7 +450,6 @@ T_T = t_2 - t_1
 ```math
 T_T = \frac{\text{Packet Length (L)}}{Transmission rate or Bandwidth (B)}
 ```
-
 
 ### Random Access
 
@@ -482,7 +479,6 @@ Two Types : **Pure Aloha** and Slotted Aloha.
 ```math
 \text{Pure ALOHA Vulnerabe time} = 2 \times T_{fr}
 ```
-
 i.e. No station should send any frame one 
 ```math
 T_{fr}
@@ -498,11 +494,9 @@ S - average no. of successfully transmitted frames
 \text{Throughput for pure ALOHA is } S = G \times e^{-2G}
 ```
 
-
 ```math
 S_{max} = 0.184 \text{ for } G = \frac{1}{2}
 ```
-
 ### Slotted Aloha
 To improve efficiency of pure aloha, we send frames only in slots of 
 ```math
@@ -557,7 +551,6 @@ In the worst case scenario, it will take station twice of propagation delay to d
 ```math
 T_T = 2 \times T_p
 ```
-
 
 **Energy level** is zero for idle; normal for transmission; and abnormal for collision (double normal).
 
@@ -625,7 +618,6 @@ Delay_{pr}
 ```math
 \text{Total Time} = T_{t(data)} + T_{p(data)} + Delay_{que} + Delay_{pr} + T_{t(ack)} + T_{p(ack)} + Delay_{que} + Delay_{pr}
 ```
-
 - Delays are generally zero for numerical, along with 
 ```math
 T_{t(ack)}
@@ -636,7 +628,6 @@ T_{t(ack)}
 ```math
 \text{Total Time} =  T_{t(data)} + 2 \times T_p
 ```
-
 
 Sometimes 
 ```math
@@ -653,17 +644,14 @@ Efficiency is useful time divided by total cycle time.
 \eta = \frac{T_t}{T_t + 2 \times T_p}
 ```
 
-
 ```math
 \eta = \frac{1}{1 + 2 \times \alpha} \text{ (where } \alpha = \frac{T_p}{T_t})
 ```
-
 **Effective Bandwidth / Throughput**
 
 ```math
 \text{Throughput} = \eta \times B \text{ (efficiency * bandwidth)}
 ```
-
 
 ### Go-back-N ARQ
 
@@ -695,7 +683,6 @@ W_s
 ```math
 \eta = \frac{W_b}{1 + 2 \times \alpha}
 ```
-
 - For maximum efficiency, 
 ```math
 W_b = 1 + 2 \times \alpha
@@ -962,7 +949,6 @@ Total length of IP datagram in bytes.
 ```math
 \text{Length of Data} = \text{Total length} - (HLEN) \times 4
 ```
-
 
 **Identification** (16 bits)
 Identifies datagram originating from a source host (even after fragmentation) and helps reassemble at destination.
@@ -1563,7 +1549,6 @@ These three messages guarantee both endpoints have agreed on each other’s init
 ```math
 \text{ratio} = \frac{\text{original size}}{\text{compressed size}}
 ```
-
 - **Throughput & Latency**: Trade‑off between speed of (de)compression and amount of reduction.
 
 ### Types of Compression
@@ -1855,7 +1840,6 @@ e
 ```math
 d \times e \equiv 1 \;(\bmod\;\phi(n)).
 ```
-
 5. **Publish** the **public key** 
 ```math
 (n, e)
@@ -1883,7 +1867,6 @@ m
 ```math
 c = m^e \bmod n.
 ```
-
 3. Send 
 ```math
 c
@@ -1901,7 +1884,6 @@ c
 ```math
 m = c^d \bmod n.
 ```
-
 2. Convert 
 ```math
 m

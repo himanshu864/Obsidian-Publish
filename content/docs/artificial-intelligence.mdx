@@ -333,7 +333,6 @@ O(b^d)
 ```math
 f(n) = g(n) + h(n)
 ```
-
 &gt; **g(n)** is sum of actual cost from start node to current node.
 &gt; **h(n)** is heuristic value of node n.
 
@@ -513,7 +512,6 @@ Ability to reason -&gt; Knowledge -&gt; Intelligence
 ```math
 \{P_1 \ \wedge \ P_2 \ \wedge \ \dots \ \wedge \ P_n \} \ |- Q
 ```
-
 - Propositional variables - 
 ```math
 p, q, r, s
@@ -593,11 +591,9 @@ p \vee q
 \neg (P \wedge Q) \equiv (\neg P \vee \neg Q)
 ```
 
-
 ```math
 \neg (P \vee Q) \equiv (\neg P \wedge \neg Q)
 ```
-
 
 **Properties**
 
@@ -605,61 +601,49 @@ p \vee q
 (\alpha \wedge \beta) \equiv (\beta \wedge \alpha) \quad \text{commutativity of } \wedge
 ```
 
-
 ```math
 (\alpha \vee \beta) \equiv (\beta \vee \alpha) \quad \text{commutativity of } \vee
 ```
-
 
 ```math
 ((\alpha \wedge \beta) \wedge \gamma) \equiv (\alpha \wedge (\beta \wedge \gamma)) \quad \text{associativity of } \wedge
 ```
 
-
 ```math
 ((\alpha \vee \beta) \vee \gamma) \equiv (\alpha \vee (\beta \vee \gamma)) \quad \text{associativity of } \vee
 ```
-
 
 ```math
 \neg(\neg\alpha) \equiv \alpha \quad \text{double-negation elimination}
 ```
 
-
 ```math
 (\alpha \to \beta) \equiv (\neg\beta \to \neg\alpha) \quad \text{contraposition}
 ```
-
 
 ```math
 (\alpha \to \beta) \equiv (\neg\alpha \vee \beta) \quad \text{implication elimination}
 ```
 
-
 ```math
 (\alpha \leftrightarrow \beta) \equiv ((\alpha \to \beta) \wedge (\beta \to \alpha)) \quad \text{biconditional elimination}
 ```
-
 
 ```math
 \neg(\alpha \wedge \beta) \equiv (\neg\alpha \vee \neg\beta) \quad \text{De Morgan}
 ```
 
-
 ```math
 \neg(\alpha \vee \beta) \equiv (\neg\alpha \wedge \neg\beta) \quad \text{De Morgan}
 ```
-
 
 ```math
 (\alpha \wedge (\beta \vee \gamma)) \equiv ((\alpha \wedge \beta) \vee (\alpha \wedge \gamma)) \quad \text{distributivity of } \wedge \text{ over } \vee
 ```
 
-
 ```math
 (\alpha \vee (\beta \wedge \gamma)) \equiv ((\alpha \vee \beta) \wedge (\alpha \vee \gamma)) \quad \text{distributivity of } \vee \text{ over } \wedge
 ```
-
 
 ## Well-found Formulas
 
@@ -702,49 +686,41 @@ S \leftrightarrow T
 ```math
 P,\;P \to Q\;\therefore\;Q
 ```
-
 - **Modus tollens**
 
 ```math
 \neg Q,\;P \to Q\;\therefore\;\neg P
 ```
-
 - **Hypothetical syllogism**
 
 ```math
 P \to Q,\;Q \to R\;\therefore\;P \to R
 ```
-
 - **Disjunctive syllogism**
 
 ```math
 P \vee Q,\;\neg P\;\therefore\;Q
 ```
-
 - **Addition**
 
 ```math
 P\;\therefore\;P \vee Q
 ```
-
 - **Simplification**
 
 ```math
 P \wedge Q\;\therefore\;P
 ```
-
 - **Conjunction**
 
 ```math
 P,\;Q\;\therefore\;P \wedge Q
 ```
-
 - **Resolution**
 
 ```math
 P \vee Q,\;\neg P \vee R\;\therefore\;Q \vee R
 ```
-
 
 ## Proposition Logic
 
@@ -775,11 +751,9 @@ Too puny a language to represent complex environment in a concise way. That's wh
 \neg [\forall_x \; P(x)] \equiv \exists_x \; \neg P(x)
 ```
 
-
 ```math
 \neg [\exists_x \; P(x)] \equiv \forall_x \; \neg P(x)
 ```
-
 
 &gt; [!Tip]
 &gt; Read from left to right, when writing in first order predicate logic.
@@ -808,7 +782,6 @@ c
 ```math
 \frac{\forall_x \; P(x)}{P(c)}
 ```
-
 2. **Existential instantiation**
 	- "there exists a person who likes pizza" means "
 ```math
@@ -828,7 +801,6 @@ c
 ```math
 \frac{\exists_x \; P(x)}{P(c)}
 ```
-
 3. **Existential generalization / Existential introduction**
 	- If "Priyanka got good marks in English", then "someone got good marks in English".
 	- If there is some element 
@@ -845,7 +817,6 @@ P
 ```math
 \frac{P(c)}{\exists_x \; P(x)}
 ```
-
 4. **Universal generalization / Universal introduction**
 	- If "A byte contains 8 bits", so for all values of x "All bytes contain 8 bits".
 	- If premise 
@@ -862,7 +833,6 @@ c
 ```math
 \frac{P(c)}{\forall_x \; P(x)}
 ```
-
 ## Forward and Backward Chaining
 
 | Forward Chaining                                                       | Backward Chaining                                                              |
@@ -1141,7 +1111,6 @@ X
 ```math
 A = \{\, (x,\;\mu_A(x)) \mid x\in X \}
 ```
-
 &gt; 
 ```math
 \mu_A: X \to [0,1]
