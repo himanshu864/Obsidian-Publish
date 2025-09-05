@@ -6,6 +6,7 @@ import { ImageZoom } from 'fumadocs-ui/components/image-zoom'
 
 <span style={{ color: 'rgb(116,62,228)' }}>#python</span> <span style={{ color: 'rgb(116,62,228)' }}>#game</span> <span style={{ color: 'rgb(116,62,228)' }}>#dev</span> 
 
+---
 # Installation
 
 1. Download and install `python` from [python.org](https://www.python.org/).
@@ -68,7 +69,7 @@ Rendering `text_surface` at  $$[20, 50]$$  on display surface.
 ![Screenshot 2025-01-28 at 11.17.26 PM.png](https://raw.githubusercontent.com/himanshu864/DevObs/refs/heads/main/Assets/Screenshot%202025-01-28%20at%2011.17.26%20PM.png)
 Notice, `text_surface` renders 20px to left and 50px down. Hence,
 
-&gt; In `pygame` coordinates starts from  $$[0, 0]$$  at top left and  $$x$$  goes from left to right, while  $$y$$  goes from up to down.
+> In `pygame` coordinates starts from  $$[0, 0]$$  at top left and  $$x$$  goes from left to right, while  $$y$$  goes from up to down.
 
 #### Render Text
 
@@ -98,8 +99,9 @@ if snail_x < -snail_width:
 
 Here we are changing snail frame at  $$5$$  fps using `snail_index`. And are changing snail's x-coordinate at `SNAIL_SPEED` to make it infinitely loop from end to start.
 
-&gt; [!note]
-&gt; Be sure update background when animating, otherwise we get strange lagging results.
+<Callout type="info">
+Be sure update background when animating, otherwise we get strange lagging results.
+</Callout>
 
 ### `convert() and convert.alpha()`
 
@@ -273,7 +275,7 @@ We can't use `screen.blit()` to display sprite. Here, we need to
 	- Group: A group of multiple sprites (snails and flies)
 	- GroupSingle: A group with a single sprite. (player)
 
-&gt; Enemies with collision must be in different groups.
+> Enemies with collision must be in different groups.
 
 ```python
 # Create Sprite Class
