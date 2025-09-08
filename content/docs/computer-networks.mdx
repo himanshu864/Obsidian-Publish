@@ -636,7 +636,7 @@ Since  $$W_s$$  (window size) packets are send together, our efficiency improves
 ```
 
 - For maximum efficiency,  $$W_b = 1 + 2 \times \alpha$$ 
-- Number of bits required for sequence number  $$= ceil(\log_2{(1 + 2\alpha)})$$ 
+- Number of bits required for sequence number  $$= ceil(\log_2{(1 + 2)} \alpha)$$ 
 
 **Problem**
 If one packet is lost during transmission, all packets ahead in the window are resend, which is very inefficient.
