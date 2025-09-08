@@ -401,7 +401,7 @@ When update of a single data value requires multiple rows of data to be updated.
 
 **2NF**
 
-&gt; Each non-key attribute must depend on the entire primary key.
+> Each non-key attribute must depend on the entire primary key.
 
 1NF with No partial dependency.
 - All non-prime attributes must be fully dependent on PK.
@@ -418,7 +418,7 @@ Add a player table to fix this 2NF violation.
 
 **3NF**
 
-&gt; Every non-key attribute in a table should depend on the key, the whole key and nothing but the key.
+> Every non-key attribute in a table should depend on the key, the whole key and nothing but the key.
 
 2NF with No transitive dependencies allowed.
 
@@ -428,11 +428,11 @@ To fix 3NF violation, we can remove `player_rating` from player table and create
 
 **Boyce-Codd NF**
 
-&gt; Every attribute in a table should depend on the key, the whole key and nothing but the key.
+> Every attribute in a table should depend on the key, the whole key and nothing but the key.
 
 **4NF**
 
-&gt; Multivalued dependencies in a table must be multivalued dependencies on the key.
+> Multivalued dependencies in a table must be multivalued dependencies on the key.
 
 Notice insert anomalies on adding new color of prairie bird. We also need to add separate style, but allowed still 3NF.
 <ImageZoom src="https://raw.githubusercontent.com/himanshu864/DevObs/refs/heads/main/Assets/Screenshot%202025-06-04%20at%2012.59.38%20PM.png" alt="Screenshot 2025-06-04 at 12.59.38 PM.png" height= {600} width= {600} />
@@ -441,7 +441,7 @@ Again split tables to `model | color` and `model | style`.
 
 **5NF**
 
-&gt; It must be possible to describe the table as being the logical result of joining some other tables together.
+> It must be possible to describe the table as being the logical result of joining some other tables together.
 
 ---
 # Transactions
@@ -582,8 +582,8 @@ Provides relationships and sometimes even ACID transactions.
 - Large storage requirement.
 - Acid generally not supported.
 
-&gt; - Vertical (scale-up) for SQL and horizontal (scale-out) for NoSQL
-&gt; - SQL requires *object-relational* mapping while NoSQL doesn't require ORMs.
+> - Vertical (scale-up) for SQL and horizontal (scale-out) for NoSQL
+> - SQL requires *object-relational* mapping while NoSQL doesn't require ORMs.
 
 ---
 # Types of DBMS
@@ -635,9 +635,9 @@ Useful properties to know to design efficient distributed systems.
 2. **Availability**: every request should get response. regardless of individual state of node.
 3. **Partition Tolerance**: system doesn't fail even if there is a break in nodes communication.
 
-&gt; **CAP theorem** states that a distributed system can only provide **two of three properties** simultaneously.
-&gt; 
-&gt; The theorem formalizes the **tradeoff between consistency and availability when there’s a partition**.
+> **CAP theorem** states that a distributed system can only provide **two of three properties** simultaneously.
+> 
+> The theorem formalizes the **tradeoff between consistency and availability when there’s a partition**.
 
 <ImageZoom src="https://raw.githubusercontent.com/himanshu864/DevObs/refs/heads/main/Assets/Screenshot%202025-06-11%20at%2011.56.41%20PM.png" alt="Screenshot 2025-06-11 at 11.56.41 PM.png" height= {400} width= {400} />
 
@@ -662,7 +662,7 @@ Master-Slave is a general way to optimize IO in a system where number of request
 1. Asynchronous - Data gets updated after a short delay. Eg: youtube comment.
 2. Synchronous - Data updated instantly. Eg: Banking.
 
-&gt; What if slave gets update?
+> What if slave gets update?
 1. Ignore/Don't Allow slave to accept updates
 2. Allow it and somehow update master.
 
@@ -1034,7 +1034,7 @@ When update of a single data value requires multiple rows of data to be updated.
 
 **2NF**
 
-&gt; Each non-key attribute must depend on the entire primary key.
+> Each non-key attribute must depend on the entire primary key.
 
 1NF with No partial dependency.
 - All non-prime attributes must be fully dependent on PK.
@@ -1051,7 +1051,7 @@ Add a player table to fix this 2NF violation.
 
 **3NF**
 
-&gt; Every non-key attribute in a table should depend on the key, the whole key and nothing but the key.
+> Every non-key attribute in a table should depend on the key, the whole key and nothing but the key.
 
 2NF with No transitive dependencies allowed.
 
@@ -1061,11 +1061,11 @@ To fix 3NF violation, we can remove `player_rating` from player table and create
 
 **Boyce-Codd NF**
 
-&gt; Every attribute in a table should depend on the key, the whole key and nothing but the key.
+> Every attribute in a table should depend on the key, the whole key and nothing but the key.
 
 **4NF**
 
-&gt; Multivalued dependencies in a table must be multivalued dependencies on the key.
+> Multivalued dependencies in a table must be multivalued dependencies on the key.
 
 Notice insert anomalies on adding new color of prairie bird. We also need to add separate style, but allowed still 3NF.
 <ImageZoom src="https://raw.githubusercontent.com/himanshu864/DevObs/refs/heads/main/Assets/Screenshot%202025-06-04%20at%2012.59.38%20PM.png" alt="Screenshot 2025-06-04 at 12.59.38 PM.png" height= {600} width= {600} />
@@ -1074,7 +1074,7 @@ Again split tables to `model | color` and `model | style`.
 
 **5NF**
 
-&gt; It must be possible to describe the table as being the logical result of joining some other tables together.
+> It must be possible to describe the table as being the logical result of joining some other tables together.
 
 ---
 # Transactions
@@ -1215,8 +1215,8 @@ Provides relationships and sometimes even ACID transactions.
 - Large storage requirement.
 - Acid generally not supported.
 
-&gt; - Vertical (scale-up) for SQL and horizontal (scale-out) for NoSQL
-&gt; - SQL requires *object-relational* mapping while NoSQL doesn't require ORMs.
+> - Vertical (scale-up) for SQL and horizontal (scale-out) for NoSQL
+> - SQL requires *object-relational* mapping while NoSQL doesn't require ORMs.
 
 ---
 # Types of DBMS
@@ -1268,9 +1268,9 @@ Useful properties to know to design efficient distributed systems.
 2. **Availability**: every request should get response. regardless of individual state of node.
 3. **Partition Tolerance**: system doesn't fail even if there is a break in nodes communication.
 
-&gt; **CAP theorem** states that a distributed system can only provide **two of three properties** simultaneously.
-&gt; 
-&gt; The theorem formalizes the **tradeoff between consistency and availability when there’s a partition**.
+> **CAP theorem** states that a distributed system can only provide **two of three properties** simultaneously.
+> 
+> The theorem formalizes the **tradeoff between consistency and availability when there’s a partition**.
 
 <ImageZoom src="https://raw.githubusercontent.com/himanshu864/DevObs/refs/heads/main/Assets/Screenshot%202025-06-11%20at%2011.56.41%20PM.png" alt="Screenshot 2025-06-11 at 11.56.41 PM.png" height= {400} width= {400} />
 
@@ -1295,7 +1295,7 @@ Master-Slave is a general way to optimize IO in a system where number of request
 1. Asynchronous - Data gets updated after a short delay. Eg: youtube comment.
 2. Synchronous - Data updated instantly. Eg: Banking.
 
-&gt; What if slave gets update?
+> What if slave gets update?
 1. Ignore/Don't Allow slave to accept updates
 2. Allow it and somehow update master.
 

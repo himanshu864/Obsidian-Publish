@@ -187,7 +187,7 @@ npx prisma generate
 - **`npx prisma migrate dev`**: This command **changes your database**. It compares your `schema.prisma` file to the actual database structure. If there are differences, it generates and runs a new SQL file to update the database tables, columns, etc. Think of it as **syncing your schema with the database**.
 - **`npx prisma generate`**: This command **updates your application's code**. It reads your `schema.prisma` file and generates the `PrismaClient` library tailored to your models (`User`, `Post`, etc.). It gives you the TypeScript types and functions so your editor knows what `prisma.user.findUnique` means. Think of it as **syncing your schema with your code**.
 
-&gt; **Key takeaway**: `migrate` affects the database, while `generate` affects the code that talks to the database. Note that `prisma migrate dev` automatically runs `prisma generate` for you after a successful migration.
+> **Key takeaway**: `migrate` affects the database, while `generate` affects the code that talks to the database. Note that `prisma migrate dev` automatically runs `prisma generate` for you after a successful migration.
 
 2. **Create a Script to Interact with the DB**
 
@@ -258,7 +258,7 @@ You should see the output confirming that a user was created and then fetched fr
 ---
 # Model
 
-&gt; The core of Prisma is the `schema.prisma` file. It's the single source of truth for your database schema and application models. This guide breaks down its key components.
+> The core of Prisma is the `schema.prisma` file. It's the single source of truth for your database schema and application models. This guide breaks down its key components.
 ## Model Fields & Types
 
 Each model in your schema represents a table in your database. Models are composed of fields, which represent the table's columns.
@@ -311,7 +311,7 @@ model Profile {
 }
 ```
 
-&gt; **Key Insight**: The `@unique` constraint on the foreign key (`userId`) is what ensures a `Profile` can only be linked to one `User`.
+> **Key Insight**: The `@unique` constraint on the foreign key (`userId`) is what ensures a `Profile` can only be linked to one `User`.
 
 #### One-to-Many (1-to-N)
 
@@ -371,7 +371,7 @@ model Category {
 }
 ```
 
-&gt; **Magic ✨**: Prisma automatically creates and manages the hidden "join" or "lookup" table in the database for you. You don't need to define it in the schema.
+> **Magic ✨**: Prisma automatically creates and manages the hidden "join" or "lookup" table in the database for you. You don't need to define it in the schema.
 
 ---
 ## Attributes
@@ -424,7 +424,7 @@ model User {
 
 Once your schema is defined, `npx prisma generate` creates a powerful, type-safe client that you can use to interact with your database. It's available via `import { PrismaClient } from '@prisma/client'`.
 
-&gt; **Best Practice**: Create a single, shared instance of `PrismaClient` for your entire application to avoid creating too many database connections.
+> **Best Practice**: Create a single, shared instance of `PrismaClient` for your entire application to avoid creating too many database connections.
 
 ### Creating a Single Record
 
@@ -477,7 +477,7 @@ const count = await prisma.user.createMany({
 // Returns a count of the records created
 ```
 
-&gt; **Note**: `createMany` does not support `include` or `select` clauses.
+> **Note**: `createMany` does not support `include` or `select` clauses.
 
 ---
 ### Fetching a Single Record by ID or Unique Field
@@ -662,4 +662,4 @@ const result = await prisma.user.deleteMany({
 // Returns a count of deleted records
 ```
 
-&gt; Warning: deleteMany() is powerful. To delete all records in a table, you can pass an empty where clause: prisma.user.deleteMany(&#123;&#125;). Use with caution!
+> Warning: deleteMany() is powerful. To delete all records in a table, you can pass an empty where clause: prisma.user.deleteMany({}). Use with caution!

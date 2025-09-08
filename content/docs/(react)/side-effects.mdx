@@ -6,7 +6,7 @@ title: "Side Effects"
 <span style={{ color: 'rgb(116,62,228)' }}>#react</span>
 
 ---
-&gt; Side effects are tasks that are required for app to work correctly, but don't directly impact current component render cycle.
+> Side effects are tasks that are required for app to work correctly, but don't directly impact current component render cycle.
 
 - If a necessary function causes react to re-render again and again. Will cause an infinity loop.
 - Which is a side-effect. If we want a function to only render once. We can use useEffect with an empty array. Or a trigger if it changes throughout runtime

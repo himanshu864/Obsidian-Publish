@@ -156,9 +156,9 @@ A typical problem in state space search is defined by:
 { Initial State, Action(s), Result(s, a), Goal State, Path Cost Function }
 ```
 
-&gt; *Action(s)*: set of all possible actions for current state.
-&gt; *Result(s, a)*: state reached by performing action  $$a$$  on state  $$s$$ .
-&gt; *cost(s, a)*: cost of performing action  $$a$$  on state  $$s$$ .
+> *Action(s)*: set of all possible actions for current state.
+> *Result(s, a)*: state reached by performing action  $$a$$  on state  $$s$$ .
+> *cost(s, a)*: cost of performing action  $$a$$  on state  $$s$$ .
 
 **Benefits**
 This structured approach enhances **clarity**, **scalability**, **optimization**, and supports effective **decision making** during the search process.
@@ -268,8 +268,8 @@ Special search method to find more solutions more efficiently using knowledge, i
 f(n) = g(n) + h(n)
 ```
 
-&gt; **g(n)** is sum of actual cost from start node to current node.
-&gt; **h(n)** is heuristic value of node n.
+> **g(n)** is sum of actual cost from start node to current node.
+> **h(n)** is heuristic value of node n.
 
 - Algorithm : using priority queue and evaluation function.
 - Complete : if search space is finite and heuristic function is *admissible*.
@@ -601,8 +601,9 @@ Too puny a language to represent complex environment in a concise way. That's wh
 ```
 
 
-&gt; [!Tip]
-&gt; Read from left to right, when writing in first order predicate logic.
+<Callout type="info">
+Read from left to right, when writing in first order predicate logic.
+</Callout>
 
 ### Conjunctive Normal Form
 
@@ -794,17 +795,17 @@ Describes the probability of an event, based on prior knowledge of conditions th
 
 In Probability theory it relates the conditional probability and marginal probability of two random events.
 
-&gt; **Conditional Probability**
-&gt;  $$P(H/E) = \frac&#123;\text&#123;number of times H and E occured&#125;&#125;&#123;\text&#123;number of times E occured&#125;&#125; = \frac&#123;P(H \; \cap \; E)&#125;&#123;P(E)&#125;$$ 
+> **Conditional Probability**
+>  $$P(H/E) = \frac{\text{number of times H and E occured}}{\text{number of times E occured}} = \frac{P(H \; \cap \; E)}{P(E)}$$ 
 
 Calculate  $$P(B / A)$$  with the knowledge of  $$P(A / B)$$ 
 
-&gt; **Baye's Theorem**
-&gt;  $$P(A/B) = \frac&#123;P(B/A) \cdot P(A)&#125;&#123;P(B)&#125;$$ 
-&gt;  $$P(A/B)$$  is *Posterior* (prob. of A when B is true)
-&gt;  $$P(B/A)$$  is *Likelihood* (prob. of evidence)
-&gt;  $$P(A)$$  is *Prior probability* (prob. of hypothesis)
-&gt;  $$P(B)$$  is *Marginal probability* (prob. of evidence)
+> **Baye's Theorem**
+>  $$P(A/B) = \frac{P(B/A) \cdot P(A)}{P(B)}$$ 
+>  $$P(A/B)$$  is *Posterior* (prob. of A when B is true)
+>  $$P(B/A)$$  is *Likelihood* (prob. of evidence)
+>  $$P(A)$$  is *Prior probability* (prob. of hypothesis)
+>  $$P(B)$$  is *Marginal probability* (prob. of evidence)
 
 **Applications**
 - Robot / automatic machines
@@ -869,8 +870,8 @@ A fuzzy set  $$A$$  over universe  $$X$$  is written as:
 A = \{\, (x,\;\mu_A(x)) \mid x\in X \}
 ```
 
-&gt;  $$\mu_A: X \to [0,1]$$  is the **membership function**
-&gt;  $$X$$  is **membership space** (universe of discourse)
+>  $$\mu_A: X \to [0,1]$$  is the **membership function**
+>  $$X$$  is **membership space** (universe of discourse)
 #### Key Features
 
 For any fuzzy set  $$A$$  with membership function  $$\mu_A(x)$$ :

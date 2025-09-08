@@ -245,14 +245,14 @@ def main():
 
 ### Enumerate
 
-&gt; **Syntax:** enumerate(iterable, start=0)
-&gt; 
-&gt; **Parameters:**
-&gt; 
-&gt; - **Iterable:** any object that supports iteration
-&gt; - **Start:** the index value from which the counter is to be started, by default it is 0
-&gt; 
-&gt; **Return:** Returns an iterator with index and element pairs from the original iterable
+> **Syntax:** enumerate(iterable, start=0)
+> 
+> **Parameters:**
+> 
+> - **Iterable:** any object that supports iteration
+> - **Start:** the index value from which the counter is to be started, by default it is 0
+> 
+> **Return:** Returns an iterator with index and element pairs from the original iterable
 
 Example:
 ```python
@@ -388,7 +388,7 @@ More tools for python
 - **string** - immutable characters between ' ', " " or "" ""
 - **byte** - binary data
 
-&gt; Use **type()** function to check data type of a value
+> Use **type()** function to check data type of a value
 
 - int's have *arbitrary precision value*. Hence, no overflow
 - same with float. In approximate binary representation
@@ -414,7 +414,7 @@ print(10 // 3)  # 3
 print(-10 // 3) # -4. Since division is -3.33 and floor is -4
 ```
 
-&gt; **`a % b`** is evaluated as `a - (b * (a // b))`
+> **`a % b`** is evaluated as `a - (b * (a // b))`
 
 ```python
 print(4 % 3)   #  1
@@ -454,7 +454,7 @@ chr(86) # V
 ord("E") # 69
 ```
 
-&gt; use **`ord()`** function return ascii value of one character string
+> use **`ord()`** function return ascii value of one character string
 
 ### Build-in Functions
 ```python
@@ -525,9 +525,9 @@ Set - {} unordered collection, mutable, iterable
 Dict - {} - unordered collection, keys immutable, value immutable, iterable
 ```
 
-&gt; start with \# for one line comments
-&gt; type between `'''...'''` or `"""..."""` for multi-line comments
-&gt; Indentation matters in python
+> start with \# for one line comments
+> type between `'''...'''` or `"""..."""` for multi-line comments
+> Indentation matters in python
 
 #### Multi-lining
 - long statements can be written in multiple lines by ending each line expect last with `\`
@@ -604,7 +604,7 @@ if __name__ == '__main__':
 - Here `Solution()` is the object with attributes and methods.
 - `sol` is simply a pointer referencing that object, since it doesn't have a name.
 
-&gt; That means `a` is not actually a variable, but a pointer to an object!
+> That means `a` is not actually a variable, but a pointer to an object!
 
 **Multiple Objects**
 ```python
@@ -726,7 +726,7 @@ else:
 **Conditional Expressions**
 Like ternary operators
 
-&gt; Read left to right
+> Read left to right
 
 ```python
 # if 10 > 20 print dumb else cool
@@ -1067,18 +1067,18 @@ del(s) # delete entire hashmap
 # UNIT 12 : Comprehensions
 ---
 
-&gt; Read in reverse. Declarative, not imperative
+> Read in reverse. Declarative, not imperative
 
 Syntax:
 ```python
 [expression for variable in iterable if condition]
 ```
 
-&gt; **Parameters**
-&gt; 
-&gt; - **`expression`**: What you want in your new list (e.g., `x`, `x+3`, `x%3`).
-&gt; - **`for variable in iterable`**: Loops over the sequence (`range(5)` is like a for loop iterating from 0 to 4).
-&gt; - **`if condition`** _(optional)_: Filters elements based on the condition (e.g., `x % 2 == 0`).
+> **Parameters**
+> 
+> - **`expression`**: What you want in your new list (e.g., `x`, `x+3`, `x%3`).
+> - **`for variable in iterable`**: Loops over the sequence (`range(5)` is like a for loop iterating from 0 to 4).
+> - **`if condition`** _(optional)_: Filters elements based on the condition (e.g., `x % 2 == 0`).
 
 ```python
 def main():

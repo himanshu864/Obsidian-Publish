@@ -415,13 +415,13 @@ As a process executes, it transitions between the following states:
 - If the **parent terminates early**, the child becomes an **orphan process**.
 - Orphans are automatically adopted by **`init` (PID 1)**, which becomes their new parent.
 
-&gt; `orphan.sh`
+> `orphan.sh`
 ```bash
 #!/bin/bash
 sleep 200 &
 ```
 
-&gt; zsh
+> zsh
 ```bash
 ps -al # list active process
 echo  $$# show current PID
@@ -645,8 +645,9 @@ Heap area remains the same, but no. of stacks is equal to the no. of threads
 - **Better CPU utilization:** Takes full advantage of multi-core processors.
 - **Scalability:** More efficient parallel execution of tasks.
 
-&gt; [!error]
-&gt; On a **single CPU**, multi-threading doesn’t improve speed (threads just context switch), but still improves responsiveness.
+<Callout type="error">
+On a **single CPU**, multi-threading doesn’t improve speed (threads just context switch), but still improves responsiveness.
+</Callout>
 
 #### Example: Multi-threading in C++ (`std::thread`)
 

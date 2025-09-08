@@ -33,8 +33,9 @@ Follow these steps to install Ubuntu Server on your designated hardware:
     sudo apt update && sudo apt upgrade -y
     ```
 
-&gt; [! Tip]
-&gt; Adjust Advanced BIOS settings if you encounter booting issues. The goal is for your server to boot automatically without manual intervention.
+<Callout type="info">
+Adjust Advanced BIOS settings if you encounter booting issues. The goal is for your server to boot automatically without manual intervention.
+</Callout>
 
 ---
 ## 1.5. Fixing Network Issues (Optional: For Wi-Fi Connectivity)
@@ -89,8 +90,9 @@ If your server lacks Ethernet support and you're encountering Wi-Fi issues, foll
     ping google.com
     ```
 
-&gt; [! Warn]
-&gt; After connecting, run `sudo apt update && sudo apt upgrade -y` again.
+<Callout type="warn">
+After connecting, run `sudo apt update && sudo apt upgrade -y` again.
+</Callout>
 #### Optional: Reduce Boot Time
 
 To prevent long boot times caused by "start job is running for wait for network to be configured," disable the service:
